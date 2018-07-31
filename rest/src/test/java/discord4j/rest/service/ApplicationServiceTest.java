@@ -22,10 +22,8 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import discord4j.common.jackson.PossibleModule;
 import discord4j.rest.RestTests;
-import discord4j.rest.json.response.ApplicationInfoResponse;
 import discord4j.rest.request.Router;
 import org.junit.Test;
-import reactor.core.scheduler.Schedulers;
 
 public class ApplicationServiceTest {
 
@@ -53,8 +51,7 @@ public class ApplicationServiceTest {
 
     @Test
     public void testGetCurrentApplicationInfo() {
-        ApplicationInfoResponse response = getApplicationService().getCurrentApplicationInfo().block();
-        System.out.println(response);
+        getApplicationService().getCurrentApplicationInfo().block();
     }
 
 }
